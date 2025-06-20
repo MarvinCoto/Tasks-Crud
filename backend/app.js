@@ -16,11 +16,11 @@ app.use(express.json());
 
 
 //Traemos el archivo json
-/*const swaggerDocument = JSON.parse(
-  fs.readFileSync(path.resolve("./DocumentacionTasksCrud.json"), "utf-8")
-)*/
+const swaggerDocument = JSON.parse(
+  fs.readFileSync(path.resolve("./Documentación-ProyectoTasks.json"), "utf-8")
+)
 
-//app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 //Definimos las rutas de las funciones que tendrá la página web
 
 app.use("/api/tasks", tasksRoutes)
